@@ -1,0 +1,345 @@
+@import url("https: //fonts.googleapis.com/css2? family= Raleway:wght@132;211;500 & display=swap" );
+
+*{
+	padding: 0;
+	margin: 0;
+	font-family: 'Relaway', sans-serif;
+	box-sizing: border-box;
+}
+
+html{
+	font-size: 62.5%;
+}
+
+body{
+	background-image: url(../imagenes/cruz.jpg);
+	background-repeat: repeat;
+}
+p{
+	color: black;
+	font-size: 1.5rem;
+	line-height: 2rem;
+	text-align: center;
+}
+
+nav, header, main, aside, footer{
+	padding: 4rem 4rem;
+	color: #5B5959;
+	font-weight: 800;
+}
+
+/*selector de clase*/
+
+.textCenter{
+    text-align: center;
+}
+.textRight{
+    text-align: right;
+}
+.textLeft{
+    text-align: left;
+}
+.textItalic{
+    font-style: italic;
+}
+.textBold{
+    font-style: bold;
+}
+
+/*Clases BEM */
+
+.botonera__img--fluid{
+	/*size: 20px;*/
+	width: 100%;
+}
+
+
+/*camelCase*/
+
+.headerBox{
+	width: auto;
+	height: auto; /*conviene auto*/
+	margin: auto;
+	padding: auto;
+	border: auto;
+}
+.mainSection{
+	width: 5rem;
+	height: 5rem; /*conviene auto*/
+	margin: 5rem auto;
+	padding: 5rem auto;
+	border: 5rem;
+	/*overflow: auto ; el desbordamiento es visible o sea con scroll cuando no lo definimos*/
+}
+
+
+/*ID*/
+#nav{
+	background-color: rgba(219, 200, 114, 0.788);
+	grid-area: nav;
+}
+
+
+#header{
+	background-color: rgba(255, 255, 254, 0.712);
+	grid-area: header;
+}
+
+#main{
+	background-color:  rgba(255, 255, 254, 0.5);
+	grid-area: main;
+	text-size-adjust: 6rem;
+}
+main section article h1{
+	text-decoration: none;
+    font-size: 2rem;
+    color: black;
+    font-weight: 100; 
+    line-height: 2.2rem;
+}
+#aside{
+	background-color: rgb(224, 209, 181);
+	grid-area: aside;
+}
+aside section fieldset legend{
+	text-decoration: none;
+    font-size: 1.5rem;
+    color: rgb(44, 44, 8);
+    font-weight: 100; 
+    line-height: 2.2rem;
+}
+aside section fieldset legend  form{
+	text-decoration: none;
+    font-size: 1rem;
+    color: rgb(44, 44, 8);
+    font-weight: 100; 
+    line-height: 2.2rem;
+}
+aside section article iframe{
+	display: inline-block;
+}
+#footer{
+	background-color: rgb(219, 200, 114);
+	grid-area: footer;
+}
+footer h4{
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: rgb(44, 44, 8);
+    font-weight: 100; 
+    line-height: 2.2rem;
+}
+
+
+/*Box Model*/
+
+.botonera{
+	width: 100%;
+}
+
+.botonera nav{
+	position: fixed;
+	top: 0;
+	width: 100%;
+	padding: 10px 30px;
+	text-align: right;
+	margin-right: 50%;
+}
+.botonera a{
+	text-decoration: none;
+	
+}
+
+	.botonera nav ul{
+	display: inline-block;
+	margin-left: 40px;
+
+}
+
+	.botonera nav ul li{
+	list-style: none;
+	display: inline-block;
+	margin-right: 10px;
+	height: 30px;
+	vertical-align: middle;
+}
+
+	.botonera nav ul li a{
+		font-size: 1.8rem;
+		text-decoration: none;
+		color: black;
+			/*Subrayado animado*/
+			/*background-image: linear-gradient(currentColor, currentColor);
+			background-position: 0% 100%;
+		 	background-repeat: no-repeat;
+		 	background-size: 0% 2px;
+		 	transition: background-size .3s;*/
+}
+
+	/*hover*/
+	/*.botonera ol li a:hover{
+		color: black;
+		font-weight: 600;*/
+		/*Subrayado animado*/
+	/*	background-size: 100% 2px;
+	}*/
+
+	/*movimiento */
+
+	
+.main{
+	padding: 40px 10px;
+	margin: 30px 30px;
+}
+.main__titulo--l{
+	font-size: 2rem;
+	display: inline-block;
+	text-align: center;
+	width: 100%;
+	padding: 2%;
+	margin-top: 10%;
+}
+.main__img--centro{
+	image-orientation: center;
+	margin-left: 8%;
+}
+.aside{
+	padding: 40px 10px;
+	margin: 30px 30px;
+}
+
+.aside__icon--sm{
+	width: 50rem;
+	height: 20rem;
+	padding: 1rem;
+}	
+
+.aside__link--md{
+	display: inline-block;
+}		
+				
+.pie{
+	padding: 30px 0;
+}
+
+.pie__icon--sm{
+	width: 30px;
+	text-decoration: none;
+}
+
+.pie__titulo--md{
+	font-size: 1.8rem;
+	display: inline-block;
+	margin-left: 50px;
+	/*position: fixed;
+	bottom: 0;
+	width: 100%;*/
+	text-decoration: none;
+}				
+
+
+/*empieza GRID*/
+.contenedorIndex{
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto auto auto auto auto;
+	grid-template-areas: "nav" "header" "main" "aside" "footer";
+}
+
+@media screen and (min-width: 768px) {
+	.contenedorIndex{
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: auto auto auto auto;
+		grid-template-areas: "nav nav nav" 
+							 "header header header"
+							 "main main aside"  
+							 "footer footer footer";	
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.contenedorIndex{	
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: auto auto auto auto auto ;
+		grid-template-areas: "nav nav nav" 
+							 "header header header"
+							 "main main main" 
+							 "aside aside aside"
+							 "footer footer footer";
+		grid-column-gap: 20px;
+	}
+	
+}
+
+.contenedorExyT{
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto auto auto;
+	grid-template-areas: "nav" "main" "footer";
+}
+
+@media screen and (min-width: 768px) {
+	.contenedorExyT{
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: auto auto auto;
+		grid-template-areas: "nav nav nav" 
+							 "main main main"  
+							 "footer footer footer";	
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.contenedorExyT{
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: auto auto auto auto;
+		grid-template-areas: "nav nav nav" 
+							 "main main main"  
+							 "footer footer footer";
+		grid-column-gap: 20px;
+	}
+	
+}
+
+.contenedorLineUp{
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto auto auto;
+	grid-template-areas: "nav" "main" "footer";
+}
+
+.contenedorInformation{
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto auto auto auto;
+	grid-template-areas: "nav" "main" "aside" "footer";
+}
+
+@media screen and (min-width: 768px) {
+	.contenedorInformation{
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: auto auto auto;
+		grid-template-areas: "nav nav nav" 
+							 "main main aside"  
+							 "footer footer footer";	
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.contenedorInformation{
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: auto auto auto auto;
+		grid-template-areas: "nav nav nav" 
+							 "main main main" 
+							 "aside aside aside" 
+							 "footer footer footer";
+		grid-column-gap: 20px;
+	}
+}
+
+/*animaciones y transformaciones*/
+
+.linear-gradient{
+	background: linear-gradient(to top, white , grey);
+	/*background: radial-gradient(circle, white 10%, pink 30%, violet 40%);*/
+	/*background: linear-gradient(90deg, rgba(238,174,202,1) 22%, rgba(148,187,233,1) 81%);*/
+}
