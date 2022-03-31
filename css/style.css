@@ -185,7 +185,14 @@ footer h4{
 	}*/
 
 	/*movimiento */
-
+	.movimiento{
+		transition: all 1.5s;
+	}
+	
+	.movimiento:hover{
+		transform: translate(10px, 10px);
+		transform: scale(0.8);
+	}
 	
 .main{
 	padding: 40px 10px;
